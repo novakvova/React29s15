@@ -18,12 +18,12 @@ class Article extends React.Component {
     render() {
         console.log("---Article props---", this.props);
         const { article } = this.props;
-        const body = <section>{article.text}</section>
+        const body = <section className="card-text">{article.text}</section>
         return (
             <div>
                 <h2>
                     {article.title}
-                    <button onClick={this.btnHandleClose}>
+                    <button onClick={this.btnHandleClose} className={this.state.isOpen ? "btn btn-primary" : "btn btn-danger"}>
                         {this.state.isOpen ? 'close' : 'open'} 
                     </button>
                 </h2>
